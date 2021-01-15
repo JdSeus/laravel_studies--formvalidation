@@ -28,7 +28,12 @@
                             @csrf
                             <div class="form-group">
                                 <label for="nome">Nome do Cliente</label>
-                                <input class="form-control" name="nome" type="text" id="nome" placeholder="Nome do cliente">
+                                <input class="form-control {{ $errors->has('nome') ? 'is-invalid' : ''}}" name="nome" type="text" id="nome" placeholder="Nome do cliente">
+                                @if ($errors->has('nome'))
+                                    <div class="invalid-feedback">
+                                        {{$errors->first('nome')}}
+                                    </div>
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label for="idade">Idade do Cliente</label>
@@ -59,11 +64,6 @@
             </div>
         </div>
     </main>
-
-    @if(isset($errors))
-    {{ var_dump($errors) }}
-    @endif
-
     <script src="{{asset('js/app.js')}}" type="text/javascript"></script>
 </body>
 </html>

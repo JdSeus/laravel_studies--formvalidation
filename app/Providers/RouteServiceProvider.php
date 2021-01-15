@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
+
+    // PARA FUNCIONAR COMO AS VERSÕES ANTIGNAS
+    protected $namespace = 'App\Http\Controllers';
+    //NO LARAVEL 8, POR PADRÃO, O NAMESPACE VEM NULL.
+    
     /**
      * The path to the "home" route for your application.
      *

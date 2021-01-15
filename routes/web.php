@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/novoCliente', function () {
-    return view('novoCliente');
-});
+Route::get('/novoCliente', 'ClienteControlador@create');
+
+Route::get('/', 'ClienteControlador@index');
 
